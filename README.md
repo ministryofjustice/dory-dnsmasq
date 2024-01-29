@@ -4,7 +4,7 @@
 
 [Dory](https://github.com/FreedomBen/dory) uses this container to provide the dnsmasq
 services in conjunction with an nginx-proxy.  It's a very lightweight container built
-on Alpine Linux (based off of [andyshinn/dnsmasq](https://hub.docker.com/r/andyshinn/dnsmasq/).
+on Alpine Linux, using only the dnsmasq-dnssec package.
 See the [dory](https://github.com/FreedomBen/dory) project page for more info.
 
 ## How do I use it?
@@ -62,3 +62,38 @@ docker run -p 53:53/tcp -p 53:53/udp --cap-add=NET_ADMIN freedomben/dory-dnsmasq
 ```
 
 *NOTE:  You have to put the # in quotes otherwise bash will think it's a comment character*
+
+### Build and push images
+
+The following commands are useful for local development.
+
+Create the builder:
+
+```bash
+make builder
+```
+
+Build and push images:
+
+```bash
+make build push
+```
+
+Remove the builder:
+
+```bash
+make remove
+```
+
+### Releases
+
+A GitHub workflow is used to build and push a container image to Docker Hub.
+- Before release, ensure that you have found a valid version of dnsmasq-dnssec, on the [Alpine Packages page](https://pkgs.alpinelinux.org/packages?name=dnsmasq-dnssec&branch=v3.19&repo=&arch=&maintainer=).
+- Ensure that this version number is assigned to `DNSMASQ_VERSION` in [.github/workflows/multi-arch-build.yml]. e.g. `DNSMASQ_VERSION=2.89-r6`.
+- Create a PR into main branch.
+- After an accepted PR, tag the commit with a version in the format of `v2.89.6` to build and push the image.
+
+### Credit
+
+- A lightweight docker image for dnsmasq [andyshinn/dnsmasq](https://hub.docker.com/r/andyshinn/dnsmasq/).
+- A PR to add compatibility for Mac M-series chips [tripox/dory-dnsmasq](https://github.com/tripox/dory-dnsmasq/commit/72549c39324014c5092cb8103378d58fbf51df80).
