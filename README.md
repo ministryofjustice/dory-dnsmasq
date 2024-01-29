@@ -88,7 +88,7 @@ make remove
 ### Releases
 
 A GitHub workflow is used to build and push a container image to Docker Hub.
-- Before release, ensure that you have ound a valid version of dnsmasq-dnssec, on the [Alpine Packages page](https://pkgs.alpinelinux.org/packages?name=dnsmasq-dnssec&branch=v3.19&repo=&arch=&maintainer=).
+- Before release, ensure that you have found a valid version of dnsmasq-dnssec, on the [Alpine Packages page](https://pkgs.alpinelinux.org/packages?name=dnsmasq-dnssec&branch=v3.19&repo=&arch=&maintainer=).
 - Ensure that this version number is assigned to `DNSMASQ_VERSION` in [.github/workflows/multi-arch-build.yml]. e.g. `DNSMASQ_VERSION=2.89-r6`.
 - Create a PR into main branch.
 - After an accepted PR, tag the commit with a version in the format of `v2.89.6` to build and push the image.
