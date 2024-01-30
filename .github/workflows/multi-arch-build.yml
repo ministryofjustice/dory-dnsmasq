@@ -52,8 +52,8 @@ jobs:
           load: true
           tags: ${{ env.TEST_TAG }}
           build-args: |
-            alpine_tag=${{ALPINE_TAG}}
-            dnsmasq_version=${{DNSMASQ_VERSION}}
+            alpine_tag=${{ env.ALPINE_TAG }}
+            dnsmasq_version=${{ env.DNSMASQ_VERSION }}
 
       # Gather meta for the builds
       - name: Docker meta
