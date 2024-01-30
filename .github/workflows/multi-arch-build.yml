@@ -69,9 +69,6 @@ jobs:
             type=semver,pattern={{major}}
           flavor: |
             latest=true
-          # build-args: |
-          #   alpine_tag=${{ALPINE_TAG}}
-          #   dnsmasq_version=${{DNSMASQ_VERSION}}
 
       # perform the builds
       - name: Build and push
@@ -87,3 +84,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.dory-dnsmasq-meta.outputs.tags }}
           labels: ${{ steps.dory-dnsmasq-meta.outputs.labels }}
+          build-args: |
+            alpine_tag=${{ALPINE_TAG}}
+            dnsmasq_version=${{DNSMASQ_VERSION}}
