@@ -85,5 +85,5 @@ jobs:
           tags: ${{ steps.dory-dnsmasq-meta.outputs.tags }}
           labels: ${{ steps.dory-dnsmasq-meta.outputs.labels }}
           build-args: |
-            alpine_tag=${{ALPINE_TAG}}
-            dnsmasq_version=${{DNSMASQ_VERSION}}
+            alpine_tag=${{ env.ALPINE_TAG }}
+            dnsmasq_version=${{ env.DNSMASQ_VERSION }}
