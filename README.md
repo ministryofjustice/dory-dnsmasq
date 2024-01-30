@@ -114,6 +114,12 @@ A GitHub workflow is used to build and push a container image to Docker Hub.
 - A PR to add compatibility for Mac M-series chips [tripox/dory-dnsmasq](https://github.com/tripox/dory-dnsmasq/commit/72549c39324014c5092cb8103378d58fbf51df80).
 
 
+<!-- License badge -->
+
+[License Link]: https://github.com/ministryofjustice/dory-dnsmasq/blob/main/LICENSE 'License.'
+
+[License Icon]: https://img.shields.io/github/license/ministryofjustice/dory-dnsmasq?style=for-the-badge
+
 <!-- MoJ Standards -->
 
 [Standards Link]: https://operations-engineering-reports.cloud-platform.service.justice.gov.uk/public-report/dory-dnsmasq 'Repo standards badge.'
