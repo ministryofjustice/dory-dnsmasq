@@ -69,9 +69,9 @@ jobs:
             type=semver,pattern={{major}}
           flavor: |
             latest=true
-          build-args: |
-            alpine_tag=${{ALPINE_TAG}}
-            dnsmasq_version=${{DNSMASQ_VERSION}}
+          # build-args: |
+          #   alpine_tag=${{ALPINE_TAG}}
+          #   dnsmasq_version=${{DNSMASQ_VERSION}}
 
       # perform the builds
       - name: Build and push
